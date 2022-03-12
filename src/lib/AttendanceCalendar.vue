@@ -49,7 +49,7 @@
         methods:{
           getDiffTime(startTime,endTime){
             let h = endTime.split(':')[0] - startTime.split(':')[0];
-            let m = endTime.split(':')[1] - startTime.split(':')[0];
+            let m = endTime.split(':')[1] - startTime.split(':')[1];
             return h * 60 + m
           },
           getAttendance(start, end, date){
