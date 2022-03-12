@@ -22,7 +22,8 @@ Vue.use(AttendanceCalendar)
 
 组件属性
 ```
-options [object] 考勤数据;
+worktime: 正常考勤需要的工作时间(单位:h) 如: 8 
+options: [object] 考勤数据;
 -- month: [string] 月份; 如: 2022-02
 -- records: [object] 考勤记录; 如:
         {

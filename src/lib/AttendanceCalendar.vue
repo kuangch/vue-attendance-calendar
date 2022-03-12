@@ -7,14 +7,14 @@
           slot-scope="{date, data}">
           <div style="position: relative; width: 100%; height: 100%">
             <div class="center date">
-              {{data.day.split('-')[2]}}
+              {{ (date.getMonth() + 1 == options.month.split('-')[1]) ? data.day.split('-')[2] : ''}}
             </div>
             <div class="item">
               <div class="null center" v-if="!options.records[data.day] || (!options.records[data.day].start_time && !options.records[data.day].end_time)">
                 {{ (date.getDay() % 7 == 6 || date.getDay() % 7 == 0 || date.getMonth() + 1 != options.month.split('-')[1]) ? '':'缺勤'}}
               </div>
               <div class="attendance" v-else
-                   :style="'background:' + getAttendance(options.records[data.day].start_time,options.records[data.day].end_time)">
+                   :style="'background:' + getAttendance(options.records[data.day].start_time,options.records[data.day].end_time,date)">
                 <div class="center time start">{{options.records[data.day].start_time}}</div>
                 <div class="center time end">{{options.records[data.day].end_time}}</div>
               </div>
@@ -39,6 +39,10 @@
             options:{
                 type: Object,
                 required: true
+            },
+            worktime:{
+              type: Number,
+              required: true
             }
         },
 
@@ -48,14 +52,17 @@
             let m = endTime.split(':')[1] - startTime.split(':')[0];
             return h * 60 + m
           },
-          getAttendance(start, end){
+          getAttendance(start, end, date){
             if(!start || !end){
+              return '#ff000055'
+            }
+            if(date.getDay() % 7 == 0 || date.getDay() % 7 == 6){
               return '#aaaaaa55'
             }
-            if (this.getDiffTime(start, end) >= 8 * 60){
+            if (this.getDiffTime(start, end) >= this.worktime * 60){
               return '#00ff0055'
             }else{
-              return '#ff000055'
+              return '#ffff0055'
             }
           }
         },
