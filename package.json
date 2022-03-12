@@ -1,0 +1,85 @@
+{
+  "name": "vue-attendance-calendar",
+  "version": "0.0.1",
+  "private": false,
+  "main": "dist/vue-attendance-calendar.dist.js",
+  "typings": "src/lib/index.js",
+  "files": [
+    "dist",
+    "src/lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuangch/vue-attendance-calendar"
+  },
+  "keywords": [
+    "vue attendance calendar",
+    "attendance",
+    "考勤",
+    "考勤日历"
+  ],
+  "author": "kuangch",
+  "license": "ISC",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint",
+    "build": "rimraf dist && webpack --config build/webpack.acalendar.js",
+    "build:demo": "vue-cli-service build"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.6",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@vue/cli-plugin-babel": "^3.0.0-rc.5",
+    "@vue/cli-plugin-eslint": "^3.0.0-rc.5",
+    "@vue/cli-service": "^3.0.0-rc.5",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-istanbul": "^4.1.1",
+    "babel-plugin-module-resolver": "^2.2.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-regenerator-runtime": "^6.5.0",
+    "css-loader": "^2.1.0",
+    "node-sass": "^4.10.0",
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.2.4",
+    "vue-template-compiler": "^2.5.16",
+    "vue-template-es2015-compiler": "^1.6.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
