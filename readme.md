@@ -24,7 +24,7 @@ Vue.use(AttendanceCalendar)
 ```
 options [object] 考勤数据;
 -- month: [string] 月份; 如: 2022-02
--- recodes: [object] 考勤记录; 如:
+-- records: [object] 考勤记录; 如:
         {
           '2022-02-01': {start_time: '9:00', end_time: '19:00'},
           '2022-02-02': {start_time: '9:00', end_time: ''},
