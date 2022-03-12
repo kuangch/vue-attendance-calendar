@@ -17,7 +17,7 @@ Vue.use(AttendanceCalendar)
 
 组件使用
 ``` html
-<attendance-calendar ref="ac" :options="options"/>
+<attendance-calendar ref="ac" :worktime="8" :options="options"/>
 ```
 
 组件属性
