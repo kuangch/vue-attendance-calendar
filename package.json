@@ -1,6 +1,6 @@
 {
   "name": "vue-attendance-calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "main": "dist/vue-attendance-calendar.dist.js",
   "typings": "src/lib/index.js",
